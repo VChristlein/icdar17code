@@ -18,3 +18,22 @@ Steps (no overall script currently...):
 - use `run_pipeline.py` to run the pipeline. 
 
 The code is as is, no warranty, etc. Please cite our work if you use my code or make some effort in improving it...
+
+### Example command:
+for run_pipeline.py:
+run_pipeline.py -c vlad_enc_ssr.cfg # load config
+  # labels for testing/training
+  --l_ben icdar17_labels_test.txt  
+  --l_exp icdar17_labels_train.txt 
+  --in_exp your_exp/ # input folder for training set
+  --in_ben your_ben/ # input folder for testing set
+  --suffix _SIFT_patch_pr.pkl.gz # suffix of the feature files 
+  --cluster_times 5 # run 5 clusterings
+  --rm_run prep_exp prep_ben prep_exp_fit # remove from the run list, here prep_exp and prep_ben were already computed in a previous run
+  --add_run ex_cls # we can also add stuff to the run command of the standard config, here: exemplar-classification 
+  --nowait # remove automatic waiting in case of overwriting stuff...
+  --outputfolder your_output_folder 
+  --identifier cluster_icdar17_bin_sift_patch32_no_dups_5000clusters_vlad_enc_ssr 
+  --not_enc_args # dont encode arguments as folderstructure
+  --feature_encoder 1 # let's use our feature encoder but only 1 run 
+  --grid lsvm # compute the best C parameter from training set
