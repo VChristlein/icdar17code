@@ -21,6 +21,7 @@ The code is as is, no warranty, etc. Please cite our work if you use my code or 
 
 ### Example command:
 for run_pipeline.py:
+```
 run_pipeline.py -c vlad_enc_ssr.cfg # load config
   # labels for testing/training
   --l_ben icdar17_labels_test.txt  
@@ -37,3 +38,4 @@ run_pipeline.py -c vlad_enc_ssr.cfg # load config
   --not_enc_args # dont encode arguments as folderstructure
   --feature_encoder 1 # let's use our feature encoder but only 1 run 
   --grid lsvm # compute the best C parameter from training set
+```
